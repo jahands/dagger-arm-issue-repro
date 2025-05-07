@@ -36,6 +36,13 @@ export class DaggerArmIssueRepro {
         "--frozen-lockfile",
         "--child-concurrency=10",
       ])
-      .withExec(["pnpm", "turbo", "build"])
+      .withExec([
+        "pnpm",
+        "turbo",
+        "build",
+        "-F",
+        "./apps/*",
+        "--log-order=grouped",
+      ])
   }
 }
